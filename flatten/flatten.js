@@ -13,5 +13,22 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 */
 
 function flatten(){
-
+	return [].concat.apply([], ...arguments);\
 }
+
+// function flatten(){
+// 	var arr=[];
+// 	// return [].concat.apply([], ...arguments);
+// 	var args = Array.prototype.slice.call(arguments);
+// 	for(var i=0; i<args.length ; i++){
+// 		arr.concat.apply(arr, args[i]);
+// 		if (Array.isArray(args[i])){
+// 			flatten(args[i]) ; 
+// 		}else {
+// 			arr.concat.apply(arr,args[i]);
+// 		}
+// 	}
+// 	return arr ; 
+// }
+
+const flatten = arr => arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
