@@ -65,7 +65,7 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
-	var arr = [], numStr= num.toString().split("").sort().reverse().join(""),number= eval(numStr);
+	var arr = [], numStr= num.toString().split("").sort().reverse().join(""),number= Number(numStr);
 	for (var i = num; i<=number; i++){
 		if(num === number){
 			return -1 ;
