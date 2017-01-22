@@ -29,21 +29,21 @@ function ticTacToe(board){
 	for (var i=0 ; i<3; i++) {
 		for (var j=0 ; j<3; j++){
 			if (i=j){
-				if ((board[i][j] === 1 && board[i][j] === 1 && board[i][j] === 1) || (board[i][j] === 2 && board[i][j] === 2 && board[i][j] === 2) ){
+				if (board[i][j] === 1  || board[i][j] === 2 ){
 					return 1 ; 
 				}	
 			}else {
-				if ((board[i][j] === 1 && board[i][j] === 1 && board[i][j] === 1) || (board[i][j] === 2 && board[i][j] === 2 && board[i][j] === 2) ){
+				if ( board[i][j] === 1 ||  board[i][j] === 2 ){
 					return 1 ; 
 				}	
 			}else {
 				for (var j=0 ; j<3; j++) {
 					for (var i=0 ; i<3; i++){
 						if (i=j){
-							if ((board[i][j] === 1 && board[i][j] === 1 && board[i][j] === 1) || (board[i][j] === 2 && board[i][j] === 2 && board[i][j] === 2) ){
+							if ( board[i][j] === 1 ||  board[i][j] === 2 ){
 								return 1 ; 
 							}	
-						}else if ((board[i][j] === 1 && board[i][j] === 1 && board[i][j] === 1) || (board[i][j] === 2 && board[i][j] === 2 && board[i][j] === 2) ){
+						}else if (board[i][j] === 1)|| board[i][j] === 2 ){
 							return 1 ; 
 						}	
 					}
