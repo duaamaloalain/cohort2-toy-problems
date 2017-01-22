@@ -59,7 +59,7 @@ LinkedList.prototype.contains=function (target) {
 }
 
 
- var Node = function(value) {
+var Node = function(value) {
 	var node = {};
 
 	node.value = value;
