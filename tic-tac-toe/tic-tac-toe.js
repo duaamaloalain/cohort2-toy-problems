@@ -22,6 +22,7 @@ ticTacToe(solvedBoard);//should return 1
 */
 
 function ticTacToe(board){
+<<<<<<< HEAD
 	var X = 1 , O=2 ;
 	if(board === []){
 		return 0; 
@@ -56,3 +57,7 @@ function ticTacToe(board){
 
 
 
+=======
+	
+};
+>>>>>>> 42a961f95ede9dc34c2125c99e247e9b7bf32aad
