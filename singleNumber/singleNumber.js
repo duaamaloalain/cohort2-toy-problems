@@ -43,17 +43,21 @@ var nums = [2, 7, 11, 15], target = 9,
 twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
-function twoSum(nums, target){
-    var toSaved={}
-    var result=[]
-    for(i=0; i< nums.length; i++){
-      if(toSaved.hasOwnProperty(nums[i])){
-        result[0] = toSaved[nums[i]] + 1
-        result[1] = i + 1;
-        return result;
-      }
-      toSaved[target - nums[i]] = i;
-    }
+function twoSum(numbers, target) {
+	var i = 0 ,j = numbers.length - 1,x ;
+	if (numbers == null || numbers.length == 0)
+		return null;
+	while (i < j) {
+		 x = numbers[i] + numbers[j];
+		if (x < target) {
+			++i;
+		} else if (x > target) {
+			j--;
+		} else {
+			return [i + 1, j + 1 ];
+		}
+	}
+	return null;
 }
 
 /*
