@@ -37,11 +37,10 @@
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
 var rotateMatrix = (matrix) => {
- 		console.log (matrix[0])
- 	return matrix[0].map(function(column, i) {
- 		return matrix.map(function(row) { 
- 			return row[i];
- 		})
- 	});
+	return matrix[0].map(function(column, i) {
+		return matrix.map(function(row) { 
+			return row[i];
+		})
+	});
 }
 ///////////////////
