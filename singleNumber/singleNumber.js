@@ -11,6 +11,7 @@ Extra credit: Could you implement it without using extra memory?
 
 Example:
 arr = [2,4,3,6,8,2,3,4,8];
+<<<<<<< HEAD
 singleNumber([2,4,3,6,8,2,3,4,8]);//should return 6 because it only appear once
 */
 function singleNumber(arr){
@@ -23,6 +24,12 @@ function singleNumber(arr){
 			newArr.push(arr[i]);
 	}
 	return newArr ;
+=======
+singleNumber(arr);//should return 6 because it only appear once
+*/
+function singleNumber(arr){
+
+>>>>>>> 2f38f3c6500ecabfadd14e698d7085c59476511e
 }
 
 /*
@@ -39,6 +46,7 @@ var nums = [2, 7, 11, 15], target = 9,
 twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
+<<<<<<< HEAD
 function twoSum(numbers, target) {
 	var i = 0 ,j = numbers.length - 1,x ;
 	if (numbers == null || numbers.length == 0)
@@ -54,6 +62,10 @@ function twoSum(numbers, target) {
 		}
 	}
 	return null;
+=======
+function twoSum(nums, target){
+
+>>>>>>> 2f38f3c6500ecabfadd14e698d7085c59476511e
 }
 
 /*
