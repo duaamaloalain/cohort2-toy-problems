@@ -30,4 +30,4 @@ var binarySearch =  (array, target) => {
 	}
 	return "your number not exist";
 }
-console.log(binarySearch([1,2,3,4,7,9,5],12));
+console.log(binarySearch([1,2,3,4,7,9,5],3));
