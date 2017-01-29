@@ -27,8 +27,18 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) => ["WEST
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't need to move at all
 */
 
+var opposit = {'NORTH':'SOUTH', 'SOUTH':'NORTH', 'EAST':'WEST', 'WEST':'EAST'};
 var dirReduc = function(directions){
-	
+	return directions.reduce(function(dir,i){
+		if (dir[dir.length-1] === opposit[i]){
+			dir.pop();
+		}
+		else{
+			dir.push(i);
+		}
+		return dir; 
+	},[]);
 	return directions;
 };
 
+// console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
