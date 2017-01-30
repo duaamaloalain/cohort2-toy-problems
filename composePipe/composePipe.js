@@ -32,26 +32,45 @@
   addAndMultiply(5);//should be 21
   var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
   addAndMultiplyTwice(5); //should be 63
- */
+  */
 
-'use strict';
-var add2 = function(number){ return number + 2; }
-var multiplyBy3 = function(number){ return number * 3; }
+  'use strict';
+  var add2 = function(number){ return number + 2; }
+  var multiplyBy3 = function(number){ return number * 3; }
 
-var pipe = function(func1,func2){
-  
-};
+  var pipe = function(func1,func2){
+  	return function (argument){
+  		return func2(func1(argument)) ;
+  	}
+  };
 
-var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
+  var addAndMultiplyTwice = pipe(add2, multiplyBy3, multiplyBy3);
 
 //==============================================================================
 
- var greet = function(name){ return 'hello ' + name;}
- var exclaim = function(statement) { return statement.toUpperCase() + '!';}
+var greet = function(name){ return 'hello ' + name;}
+var exclaim = function(statement) { return statement.toUpperCase() + '!';}
 
-var compose = function(){
-  
+var compose = function () {
+	var funcs= arguments;
+	return function(){
+		for (var i = funcs.length - 1; i >= 0; i--) {
+			arguments=[funcs[i].apply(this,arguments)];
+		}
+		return arguments[0];
+	}
+    // return function(element) {
+    //     return fn1(fn2(element));
+    // };
 };
 
-
 var welcome = compose(greet, exclaim);
+
+
+
+
+
+
+
+
+
