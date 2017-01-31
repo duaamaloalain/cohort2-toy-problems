@@ -7,10 +7,12 @@
  * Extra credit: Make your function handle negative numbers.
  */
 
-var largestProductOfThree = function(array) {
-	
-};
+ var largestProductOfThree = function(array) {
+ 	array=array.sort(); 
+ 	return(array[array.length-1]* array[array.length-2]* array[array.length-3]); 
+ };
 
 
 
 
+console.log(largestProductOfThree([2, 1, 3, 7]))
