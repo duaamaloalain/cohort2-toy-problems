@@ -10,3 +10,9 @@ Comment has one User
 Like has one User and one Post
 
 * [ ] Optional question for your brain: User to User has Friendship.
+
+user     (1-M)   likes
+user     (1-M)   posts
+user     (1-M)   commentS
+post     (1-M)   likes
+post     (1-M)   comments
