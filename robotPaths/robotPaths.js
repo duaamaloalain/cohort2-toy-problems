@@ -1,5 +1,4 @@
-/**
- *  
+/**  
  *  A robot located at the top left corner of a 5x5 grid is trying to reach the 
  *  bottom right corner. The robot can move either up, down, left, or right, 
  *  but cannot visit the same spot twice. How many possible unique paths are 
@@ -36,17 +35,27 @@ var makeBoard = function(n) {
 //The answer for a board size 5 is 8512 unique paths
 
 var robotPaths = function(myBoard) {
- 
+  var board = makeBoard(myBoard), myPaths = 0; // here i collect all the path 
+  var Paths = function (i, j) {   //find all possible  paths
+    if (i < 0 || i >= myBoard || j < 0 || j >= myBoard) {
+      return;
+    }
+    if (i === myBoard - 1 && j === myBoard - 1) {
+	    myPaths++;
+    	return;
+    }
+    if (!board.hasBeenVisited(i, j)) {
+      board.togglePiece(i, j);
+      Paths(i, j + 1); // right
+      Paths(i + 1, j); // down 
+      Paths(i, j - 1); // left
+      Paths(i - 1, j); // up 
+      board.togglePiece(i, j);
+    }
+  };
+  Paths(0, 0);
+  return myPaths;
 }
 
-      
 
-
-
-
-
-
-
-
-
-
+console.log (robotPaths(5))
