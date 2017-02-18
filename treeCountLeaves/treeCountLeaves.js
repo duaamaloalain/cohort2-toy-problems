@@ -32,7 +32,7 @@
  */
 
 var Tree = function(value){
-  this.value = 1;
+  this.value = value;
   this.children = [];
  
 };
