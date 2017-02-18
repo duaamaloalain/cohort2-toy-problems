@@ -39,7 +39,7 @@ var translateRomanNumeral = function(romanNumeral){
 	return result;
 }
 
-console.log(translateRomanNumeral("IV"))
+console.log(translateRomanNumeral("XXI"))
 
 	// var array= Object.keys(DIGIT_VALUES);
 	// for (var i = 0; i < numeral.length; i++) {
