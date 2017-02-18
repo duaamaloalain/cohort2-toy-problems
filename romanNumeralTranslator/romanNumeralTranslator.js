@@ -17,8 +17,11 @@
  */
 
 var translateRomanNumeral = function(romanNumeral){
+<<<<<<< HEAD
   romanNumeral= romanNumeral.split(''),
     result = 0, num = 0; 
+=======
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
 	var DIGIT_VALUES = {
 	  I: 1,
 	  V: 5,
@@ -28,6 +31,7 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+<<<<<<< HEAD
 	if (!romanNumeral.indexOf(DIGIT_VALUES) === 0){
 		return null; 
 	}
@@ -57,3 +61,6 @@ console.log(translateRomanNumeral("XXI"))
 	// 	}
 	// }
     //	return value;
+=======
+}
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
