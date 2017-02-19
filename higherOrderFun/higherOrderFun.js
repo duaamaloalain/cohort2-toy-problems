@@ -12,10 +12,10 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
+	var newArray=[];
 	if (typeof callback !== 'function') {
 		throw new Error(callback + 'it is not a function');
 	}
-	var newArray=[];
 	[].forEach( function(element, i) {
 		newArray.push(callback(element, i));
 	})
@@ -83,7 +83,7 @@ asyncSum(10,"B",logNumber);//should print "Error: Incorrect argument(s)" after 1
 Problem 3 (ADVANCED):
 
 What kind of candy do you like?
-Your answer: 
+Your answer: ice creem / candy 
 
 */
 
