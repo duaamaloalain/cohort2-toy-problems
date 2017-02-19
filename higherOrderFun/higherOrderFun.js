@@ -12,17 +12,24 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
-
+	if (typeof callback !== 'function') {
+		throw new Error(callback + 'it is not a function');
+	}
+	var newArray=[];
+	[].forEach( function(element, i) {
+		newArray.push(callback(element, i));
+	})
+	return newArray;
+    
 }
 
-/*
-Example usage:
-var transform = function(element,index,array){
-  return array[index] + index + element;
-};
+// Example usage:
+// var transform = function(element,index,array){
+//   return array[index] + index + element;
+// };
 
-["a","b","c"].map(transform); //should return ['a0a','b1b','c2c'];
-*/
+// ["a","b","c"].map(transform) //should return ['a0a','b1b','c2c'];
+
 
 
 /*
@@ -39,7 +46,19 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
-
+	if (typeof callback !== 'function') {
+		throw new Error(callback + 'it is not a function');
+	}
+	var aa= function(a) {
+		if (b !== undefined) {
+			callback(a + b);
+		}
+	};
+	var bb= function(b) {
+		if (a !== undefined) {
+			callback(a + b);
+		}
+	};
 };
 
 /*
