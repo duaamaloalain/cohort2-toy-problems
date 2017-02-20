@@ -14,8 +14,18 @@ abc(); // should return 'a' again on this fourth call
 */
 
 
-function makeLooper(string){
 
+var x=0;
+function makeLooper(string){
+	if (string.length === 0 ){
+			return "plz enter the input";
+	}
+	var loop=function (string,x ) {
+		for (var i=x; i<string.length; i++){
+			return string[i] ;
+		}
+	}
+	return loop(string, x++)
 };
 
 
@@ -51,8 +61,17 @@ pyramid(750); // should === 12
 pyramid(1666); // should === 16
 */
 
-function pyramid(cans){
-	
+function pyramid(n, cans){
+	// var n;
+	// if (!cans) {
+ //        cans = n / 2.0;
+ //    }
+ // 	var d = n / cans;   
+ //    var finalcans = (d + cans) / 2.0;     
+ //    if (cans == finalcans) {          
+ //        return cans;
+ //    }
+    return pyramid(n, finalcans)
 };
 
 
