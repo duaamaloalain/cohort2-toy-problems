@@ -60,51 +60,39 @@ var array = [ [08,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,08],
 
 
 
-
 var largestProductOfFour = function(array) {
-	var product=1, max=0;
+	var product=1, max=0, array1=[];
 	for (var i=0; i<array.length; i++){
 		for(var j=0; j<array[0].length; j++){
-			
 			for (var m=0; m<4; m++){
-				if (j+m <array[0].length){
-					product *= array[i][j+m]
+				if (i-m > 0 && j-m >0){
+					product *= array[i-m][j-m];
+					console.log(product)
+					array1.push(product)
 				}
-			}
-			if (product > max){
-				max=product;
-			}
-
-
-			
-			for (var m=0; m<4; m++){
-				if (j+m <array.length){
-					product *= array[i+m][j]
-				}
-			}
-			if (product > max){
-				max=product;
-			}
-
-
-			for (var m=0; m<4; m++){
-				if (i-m > 0 && j-m > 0){
-					product *= array[i-m][j-m]
-				}
-			}
-			if (product > max){
-				max=product;
-			}
-
-			for (var m=0; m<4; m++){
 				if (i-m > 0 && j+m < array[0].length){
-					product *= array[i-m][j+m]
+					product *= array[i-m][j+m];
+					console.log(product)
+					array1.push(product)
+
+				}
+				if (j+m <array[0].length){
+					product *= array[i][j+m];
+					console.log(product)
+					array1.push(product)
+				}
+				if (j+m <array.length){
+					product *= array[i+m][j];
+					console.log(product)
+					array1.push(product)
+
 				}
 			}
+
 			if (product > max){
 				max=product;
 			}
-			return max ;
+			return max , array1;
 		}
 	}
 };
