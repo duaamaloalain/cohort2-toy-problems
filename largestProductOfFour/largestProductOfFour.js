@@ -97,7 +97,7 @@ var largestProductOfFour = function(array) {
 	}
 };
 
-
+ 
 
 console.log(largestProductOfFour(array))
 
